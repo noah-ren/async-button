@@ -1,6 +1,6 @@
 {
     "name": "async-button",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Button with asynchronous onClick",
     "author": "noiach",
     "license": "MIT",
