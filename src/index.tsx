@@ -69,7 +69,11 @@ export const AsyncButton = ({
                 alignItems: "center",
                 border: "none",
                 borderRadius: "0.25rem",
-                cursor: "pointer",
+                cursor: disabled
+                    ? "not-allowed"
+                    : done || calling
+                    ? "default"
+                    : "pointer",
                 display: "inline-flex",
                 justifyContent: "center",
                 outline: "none",
