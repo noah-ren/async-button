@@ -8,8 +8,16 @@ export const callback = async (): Promise<void> => {
 };
 
 export const errorCallback = async (): Promise<void> => {
-    return new Promise<void>((resolve, reject) =>
-        setTimeout(() => reject(new Error("error!")), 4 * 1000),
+    return new Promise<void>((_resolve, reject) =>
+        setTimeout(
+            () =>
+                reject(
+                    new Error(
+                        "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://example.com. (Reason: CORS request did not succeed). Status code: (null).",
+                    ),
+                ),
+            4 * 1000,
+        ),
     );
 };
 

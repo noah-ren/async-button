@@ -10,17 +10,32 @@
 npm install --save async-button
 ```
 
+```bash
+yarn add async-button
+```
+
 ## Usage
 
 ```tsx
 import React, { Component } from "react";
 
-import MyComponent from "async-button";
-import "async-button/dist/index.css";
+import { AsyncButton } from "async-button";
+
+export const callback = async (): Promise<void> => {
+    return new Promise<void>((resolve) => setTimeout(resolve, 4 * 1000));
+};
 
 class Example extends Component {
     render() {
-        return <MyComponent />;
+        return (
+            <AsyncButton
+                onClick={callback}
+                // Optional
+                callOnMount={true}
+                // Optional
+                allowOnlyOnce={true}
+            />
+        );
     }
 }
 ```

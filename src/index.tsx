@@ -1,5 +1,8 @@
 import React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import ReactTooltip from "react-tooltip";
+import { Info } from "./Info";
+
 import { Spinner } from "./Spinner";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -76,17 +79,22 @@ export const AsyncButton = ({
             }}
             {...props}
         >
-            {done ? (
-                <span>Done -&nbsp;</span>
-            ) : callError ? (
-                <span>
-                    <span style={{ color: "#c73c50" }}>Error</span> -&nbsp;
+            {done ? <span>Done -&nbsp;</span> : null}
+            <span style={{ display: callError ? "inline" : "none" }}>
+                <span
+                    style={{
+                        color: "#c73c50",
+                        fontWeight: 700,
+                    }}
+                    data-tip={callError?.message || "error"}
+                >
+                    Error <Info style={{ fill: "#c73c50" }} />
                 </span>
-            ) : (
-                ""
-            )}
+                &nbsp;-&nbsp;
+            </span>
             {calling ? <Spinner /> : null}
             <div>{children}</div>
+            <ReactTooltip effect="solid" />
         </button>
     );
 };
