@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { AsyncButton } from ".";
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+describe("AsyncButton", () => {
+    it("is truthy", () => {
+        expect(AsyncButton).toBeTruthy();
+    });
+});

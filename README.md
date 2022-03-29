@@ -13,18 +13,14 @@ npm install --save async-button
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'async-button'
-import 'async-button/dist/index.css'
+import MyComponent from "async-button";
+import "async-button/dist/index.css";
 
 class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+    render() {
+        return <MyComponent />;
+    }
 }
 ```
-
-## License
-
-MIT © [noiach](https://github.com/noiach)
