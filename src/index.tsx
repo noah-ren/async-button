@@ -75,6 +75,7 @@ export const AsyncButton = ({
                 outline: "none",
                 padding: "0.5em 1em",
                 transition: "transform 0.2s, -webkit-transform 0.2s",
+                opacity: disabled ? 0.5 : 1,
                 ...style,
             }}
             {...props}
