@@ -6,8 +6,11 @@ import { Info } from "./Info";
 import { Spinner } from "./Spinner";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    // The asynchronous callback.
     onClick: () => Promise<any>;
+    // (optional) Whether the onClick should be called automatically.
     callOnMount?: boolean;
+    // (optional) Disable the button after onClick has been succesfully called.
     allowOnlyOnce?: boolean;
 }
 
